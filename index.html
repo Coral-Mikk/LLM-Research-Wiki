@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CT Topogram 金屬植入物偵測</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eaf0f4;color:#142b40;font-family:system-ui,"PingFang TC","Microsoft JhengHei",sans-serif}main{max-width:1440px;margin:auto;padding:clamp(12px,3vw,42px)}.slide{aspect-ratio:16/9;background:#fff;display:flex;flex-direction:column;padding:clamp(18px,4.1vw,62px);gap:clamp(11px,1.7vw,24px);border-top:5px solid #176b6b;box-shadow:0 5px 22px #142b4012}.slide[hidden]{display:none}header{color:#176064;font-weight:700;letter-spacing:.12em;font-size:clamp(13px,1.4vw,21px)}.content{margin:auto 0}.cover h1{max-width:14em;font-size:clamp(36px,6vw,86px)}h1{font-size:clamp(25px,4vw,57px);line-height:1.14;margin:0 0 .32em;text-wrap:balance}.lead{font-size:clamp(15px,2vw,29px);line-height:1.4;color:#15585e;margin:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);margin-top:clamp(14px,2.6vw,34px)}.block{padding:clamp(12px,1.8vw,26px);background:#eef5f6;border-left:3px solid #328383}h2{font-size:clamp(15px,1.65vw,24px);margin:0 0 .4em}p{margin:0;line-height:1.5;font-size:clamp(14px,1.5vw,22px)}.aside{margin-top:1em;color:#405567}footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #cedbe3;padding-top:10px;font-size:clamp(12px,1.15vw,16px);color:#405567}footer span:last-child{white-space:nowrap}.chart{margin-top:clamp(18px,3vw,42px);max-width:850px}.bar{display:grid;grid-template-columns:2.8em 1fr 4.5em;align-items:center;margin-bottom:.8em;gap:.5em;font-size:clamp(15px,2vw,27px)}.track{height:1em;background:#e2edf0}.track div{height:100%;background:#21807c}.axis{display:flex;justify-content:space-between;margin:0 5em 0 3.3em;font-size:clamp(13px,2vw,27px);color:#405567}nav{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px}button{background:#fff;border:1px solid #9ab1bf;border-radius:4px;color:#142b40;padding:.5em .9em;font:inherit;min-height:42px}button:disabled{opacity:.5}#page{min-width:4em;text-align:center}@media(max-width:620px){.slide{aspect-ratio:auto;min-height:440px}.grid{grid-template-columns:1fr}}@media print{@page{size:13.333in 7.5in;margin:0}body{background:#fff}main{max-width:none;margin:0;padding:0}nav{display:none}.slide,.slide[hidden]{display:flex;height:7.49in;width:13.33in;break-after:page;box-shadow:none}.slide:last-of-type{break-after:auto}}
+</style>
+</head>
+<body>
+<main aria-label="CT Topogram 金屬植入物偵測簡報">
+<section class="slide cover" ><header>封面</header><div class="content"><h1>CT Topogram 金屬植入物偵測</h1><p class="lead">從植入物定位到掃描前複核的研究設計</p></div><footer><span>Choi 等（2024）｜Wiki 主題頁</span><span>01 / 07</span></footer></section>
+<section class="slide " hidden><header>臨床問題</header><div class="content"><h1>Topogram 能提供哪些植入物資訊？</h1><p class="lead">植入物類別與頭尾向範圍</p><div class="grid"><div class="block"><h2>研究物件</h2><p>髖部與脊椎金屬植入物</p></div><div class="block"><h2>臨床用途</h2><p>把植入物類別與 z 軸範圍提供給迭代式金屬假影降低（iMAR）流程。</p></div></div></div><footer><span>Choi 等（2024）§2.1–2.4</span><span>02 / 07</span></footer></section>
+<section class="slide " hidden><header>研究方法</header><div class="content"><h1>從定位影像取得 z 軸範圍</h1><p class="lead">Topogram → 類 U-Net 語意分割 → 植入物類別與 z 軸範圍</p><div class="grid"><div class="block"><h2>訓練資料</h2><p>髖部 263 張｜脊椎 2,127 張標註 Topogram</p></div><div class="block"><h2>外部驗證</h2><p>腹部 CT 2,178 例（AP），腰椎 CT 515 例（每例 AP 與側位）。兩位放射科醫師獨立判讀，分歧時達成共識。</p></div></div></div><footer><span>Choi 等（2024）§2.1–2.4、Table 2</span><span>03 / 07</span></footer></section>
+<section class="slide " hidden><header>主要結果</header><div class="content"><h1>內部驗證的 z 軸 IoU 均超過 90%</h1><p class="lead">z 軸 IoU 衡量預測與參考頭尾向範圍的重疊</p><div class="chart" aria-label="內部驗證 z 軸 IoU，脊椎 93.0%，髖部 96.2%"><div class="bar"><span>脊椎</span><div class="track"><div style="width:93.0%"></div></div><strong>93.0%</strong></div><div class="bar"><span>髖部</span><div class="track"><div style="width:96.2%"></div></div><strong>96.2%</strong></div><div class="axis"><span>0%</span><span>50%</span><span>100%</span></div></div></div><footer><span>Choi 等（2024）§2.4、§3.1</span><span>04 / 07</span></footer></section>
+<section class="slide " hidden><header>外部驗證</header><div class="content"><h1>臨床判讀要看投照方向與評估層級</h1><p class="lead">外部驗證｜敏感度</p><div class="grid"><div class="block"><h2>腹部 AP｜髖部</h2><p>病人層級 97.3%（36/37）｜像素列層級 78.1%</p></div><div class="block"><h2>腰椎側位｜髖部</h2><p>作者未能訓練側位髖部偵測。外部驗證未檢出髖部植入物。</p></div></div></div><footer><span>Choi 等（2024）§3.2.2–3.2.3、Figure 1b／1f</span><span>05 / 07</span></footer></section>
+<section class="slide " hidden><header>適用範圍</header><div class="content"><h1>哪些情況需要人工複核？</h1><p class="lead">外部驗證的誤判案例</p><div class="grid"><div class="block"><h2>骨水泥</h2><p>曾被誤判為脊椎金屬植入物。</p></div><div class="block"><h2>固定器械</h2><p>延伸至薦髂區曾被誤判為髖部植入物。非典型固定系統曾漏檢。</p></div></div><p class="aside">跨廠牌泛化與 CT 主控台整合後的臨床效益仍待驗證。</p></div><footer><span>Choi 等（2024）§3.2.4、Figure 2、§4</span><span>06 / 07</span></footer></section>
+<section class="slide " hidden><header>碩論銜接</header><div class="content"><h1>如何評估正式掃描前的金屬複核？</h1><p class="lead">碩論研究設計｜待驗證</p><div class="grid"><div class="block"><h2>模型與輸出</h2><p>規劃以 YOLO 定位 2D bounding box，並區分可移除與不可移除金屬。</p></div><div class="block"><h2>評估分層</h2><p>按 AP、側位與物件類別檢視 AP、mAP、召回率及誤報。另評估每次檢查是否漏提醒。</p></div></div></div><footer><span>Wiki｜CT Topogram 金屬物件偵測、Topogram 的一維 IoU</span><span>07 / 07</span></footer></section>
+<nav aria-label="投影片導覽"><button id="prev" type="button">上一頁</button><span id="page" aria-live="polite">1 / 7</span><button id="next" type="button">下一頁</button></nav>
+</main>
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const previous = document.getElementById('prev');
+const next = document.getElementById('next');
+const page = document.getElementById('page');
+let current = 0;
+function show(index) {
+  current = Math.max(0, Math.min(index, slides.length - 1));
+  slides.forEach((slide, position) => { slide.hidden = position !== current; });
+  page.textContent = (current + 1) + ' / ' + slides.length;
+  previous.disabled = current === 0;
+  next.disabled = current === slides.length - 1;
+}
+previous.addEventListener('click', () => show(current - 1));
+next.addEventListener('click', () => show(current + 1));
+document.addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight' || event.key === 'PageDown') { event.preventDefault(); show(current + 1); }
+  if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); show(current - 1); }
+});
+show(0);
+</script>
+</body>
+</html>
